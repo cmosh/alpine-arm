@@ -1,4 +1,4 @@
-FROM armhf/alpine:3.4
+FROM armhf/alpine:latest
 
 ENV QEMU_EXECVE 1
 
