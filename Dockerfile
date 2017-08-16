@@ -1,4 +1,5 @@
-FROM armhf/alpine:latest
+ARG CODE_VERSION=3.6
+FROM arm32v6/alpine:$CODE_VERSION
 
 ENV QEMU_EXECVE 1
 
