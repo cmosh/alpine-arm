@@ -2,6 +2,9 @@
 
 echo "Build hook running"
 
-docker build --build-arg CODE_VERSION=3.6 -t $DOCKER_REPO:3.6-$CACHE_TAG .
+# once dockerhub supports ARG before FROM (upgrade to 1.9)
+# docker build --build-arg CODE_VERSION=3.6 -t $DOCKER_REPO:3.6-$CACHE_TAG .
+# docker build --build-arg CODE_VERSION=3.5 -t $DOCKER_REPO:3.5-$CACHE_TAG .
 
-docker build --build-arg CODE_VERSION=3.5 -t $DOCKER_REPO:3.5-$CACHE_TAG .
+docker build -t $DOCKER_REPO:3.6-$CACHE_TAG -f Dockerfile .
+docker build -t $DOCKER_REPO:3.5-$CACHE_TAG -f Dockerfile.3.5 .
