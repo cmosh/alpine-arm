@@ -8,22 +8,25 @@ Alpine Linux is a Linux distribution built around musl libc and BusyBox. The ima
 
 ## How to use this image
 
-    Use like you would any other base image except for one caveat, you need to enclose your RUN portion with
+Use like you would any other base image except for one caveat, you need to enclose your __RUN __portion with:
 
-       *RUN [ "cross-build-start" ]*
-        and
-       *RUN [ "cross-build-end" ]*
+        FROM foo/bar
+        RUN [ "cross-build-start" ]
+        ....
+        RUN [ "cross-build-end" ]
+        ENTRYPOINT ["./foo"]
+        CMD ["./bar"]
 
-    Like below:
+Like below:
 
-       `FROM cmosh/alpine-arm:3.3
+        FROM cmosh/alpine-arm:3.3
         RUN [ "cross-build-start" ]
         RUN apk add --no-cache mysql-client
         RUN [ "cross-build-end" ]
 
-        ENTRYPOINT ["mysql"]`
+        ENTRYPOINT ["mysql"]
 
-    This will allow your image to safely build on docker hub.
+This will allow your image to safely build on docker hub.
 
 ## Note
 
