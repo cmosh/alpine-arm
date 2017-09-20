@@ -1,6 +1,4 @@
-# keeping duplicated Dockerfiles for now, until dockerhub upgrades to 1.9
-# ARG CODE_VERSION 3.6
-FROM arm32v6/alpine:3.6
+FROM arm32v6/alpine:3.5
 
 ENV QEMU_EXECVE 1
 
