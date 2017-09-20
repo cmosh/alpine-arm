@@ -1,4 +1,4 @@
-# ARM image for alpine linux
+# ARM image for alpine linux [![](https://images.microbadger.com/badges/image/cmosh/alpine-arm.svg)](https://microbadger.com/images/cmosh/alpine-arm "Get your own image badge on microbadger.com")
 
 Alpine base image for arm that can builds on docker hub and other x86 platforms. This is based on resin's debian project
 
@@ -8,7 +8,7 @@ Alpine Linux is a Linux distribution built around musl libc and BusyBox. The ima
 
 ## How to use this image
 
-Use like you would any other base image except for one caveat, you need to enclose your __RUN __portion with:
+Use like you would any other base image except for one caveat, you need to enclose your __RUN__ portion with:
 
         FROM foo/bar
         RUN [ "cross-build-start" ]
